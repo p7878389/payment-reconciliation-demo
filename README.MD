@@ -18,3 +18,7 @@
     // 与对账文件差异     
     Set<Object> outerSetDifference = redisServices.difference("{account}:outerSet", "{account}:union");
   ~~~
+
+#### 注意
+- 当订单数据量很大的时候就不能在使用redis进行差异比较，也不能在使用mysql来对第三方账单进行存储
+- 数据量大的情况可以使用大数据相关工具进行对账处理，例如spark、flink等
